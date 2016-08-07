@@ -22,13 +22,15 @@
       display: flex;
       align-items: center;
       justify-content: center;
+      flex-direction: column;
       max-width: 40em;
     }
   </style>
 </head>
 <body>
   <div class="container">
-    <p class="question lead"><%= question %></p>
+    <p class="text-center question lead"><%= question %></p>
+    <p class="text-center"><a href="/" class="btn btn-default">Moar!</a></p>
   </div>
 </body>
 </html>
