@@ -1,0 +1,17 @@
+<p class="text-center large" data-behavior="question-container">
+  Share this link with other participants:
+</p>
+
+<p class="text-center large">
+  <%= link_to @secret, session_path(@secret), data: { behavior: 'session-url-container' } %>
+</p>
+
+<p class="text-center">
+  <button class="btn btn-default" type="button" data-behavior="copy-button" data-clipboard-target="[data-behavior=session-url-container]" title="Copy to clipboard">
+    <i class="fa fa-copy"></i> Copy
+  </button>
+</p>
+
+<script type="text/javascript">
+  new Clipboard("[data-behavior=copy-button]");
+</script>

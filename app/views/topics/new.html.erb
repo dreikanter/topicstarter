@@ -1,7 +1,15 @@
-<p class="text-center question lead" data-behavior="question-container">
+<p class="text-center large" data-behavior="question-container">
   <%= @question %>
 </p>
 
 <p class="text-center">
-  <%= link_to 'Moar!', new_topic_path(format: :js), remote: true, class: 'btn btn-default' %>
+  <button class="btn btn-default" type="button" data-behavior="copy-button" data-clipboard-target="[data-behavior=question-container]" title="Copy to clipboard">
+    <i class="fa fa-copy"></i> Copy
+  </button>
+
+  <%= link_to 'Moar!', new_topic_path(format: :js), remote: true, class: 'btn btn-default', data: { behavior: 'moar-button' } %>
 </p>
+
+<script type="text/javascript">
+  new Clipboard("[data-behavior=copy-button]");
+</script>

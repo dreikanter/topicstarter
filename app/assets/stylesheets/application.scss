@@ -17,12 +17,14 @@
 @import "bootstrap-sprockets";
 @import "bootstrap";
 
+$span-medium: 20px;
+
 html, body, .container {
   height: 95%;
 }
 
 body {
-  padding: 20px;
+  padding: $span-medium;
 }
 
 .container {
@@ -31,4 +33,20 @@ body {
   justify-content: center;
   flex-direction: column;
   max-width: 40em;
+}
+
+.copy-button {
+  color: #ddd;
+}
+
+.large {
+  font-size: 28px;
+  margin-bottom: $span-medium;
+}
+
+.menu {
+  .menu-item {
+    display: inline-block;
+    padding-right: $span-medium;
+  }
 }
