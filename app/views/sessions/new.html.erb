@@ -1,15 +1,20 @@
-<p class="text-center large" data-behavior="question-container">
+<p class="text-center large">
   Share this link with other participants:<br>
-  <%= link_to @secret, new_topic_path(secret: @secret), data: { behavior: 'session-url-container' } %>
 </p>
 
+<div class="input-group large">
+  <input type="text" class="form-control" placeholder="Search for..." data-behavior="session-url-container">
+  <span class="input-group-btn">
+    <button class="btn btn-default" type="button" data-behavior="copy-button" data-clipboard-target="[data-behavior=session-url-container]">Copy!</button>
+  </span>
+</div>
+
 <p class="text-center">
-  <button class="btn btn-default" type="button" data-behavior="copy-button" data-clipboard-target="[data-behavior=session-url-container]" title="Copy to clipboard">
-    <i class="fa fa-copy"></i> Copy
-  </button>
   <%= link_to 'Start session', new_topic_path(secret: @secret), class: 'btn btn-success' %>
 </p>
 
 <script type="text/javascript">
+  var input = $("[data-behavior=session-url-container]")[0];
+  input.value = window.location.origin + "<%= new_topic_path(secret: @secret) %>";
   new Clipboard("[data-behavior=copy-button]");
 </script>

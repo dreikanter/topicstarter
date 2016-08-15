@@ -2,13 +2,16 @@
   <%= @question %>
 </p>
 
-<p class="text-center">
-  <button class="btn btn-default" type="button" data-behavior="copy-button" data-clipboard-target="[data-behavior=question-container]" title="Copy to clipboard">
-    <i class="fa fa-copy"></i> Copy
-  </button>
-
-  <%= link_to 'Moar!', new_topic_path(secret: @secret, format: :js), remote: true, class: 'btn btn-success', data: { behavior: 'moar-button' } %>
-</p>
+<div class="btn-toolbar" role="toolbar">
+  <div class="btn-group" role="group">
+    <button class="btn btn-default" type="button" data-behavior="copy-button" data-clipboard-target="[data-behavior=question-container]" title="Copy to clipboard">
+      <i class="fa fa-copy"></i> Copy
+    </button>
+  </div>
+  <div class="btn-group" role="group" aria-label="...">
+    <%= link_to 'Moar!', new_topic_path(secret: @secret, format: :js), remote: true, class: 'btn btn-success', data: { behavior: 'moar-button' }, onclick: "this.blur();" %>
+  </div>
+</div>
 
 <script type="text/javascript">
   new Clipboard("[data-behavior=copy-button]");

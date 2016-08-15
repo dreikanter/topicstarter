@@ -24,6 +24,7 @@
   App.updateQuestion = function(question) {
     var moarButton = $("[data-behavior=moar-button]");
     var questionContainer = $("[data-behavior=question-container]");
+    if (questionContainer.html() == question) return;
     moarButton.addClass("disabled");
     questionContainer.html(question).effect("highlight", {}, 500, function() {
       moarButton.removeClass("disabled");
