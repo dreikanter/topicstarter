@@ -19,3 +19,7 @@ How to use:
 
 - Click "New session" and share session link with other participants.
 - Each time a participant clicks `Moar!`, the whole group sees new question.
+
+Demo:
+
+[![Topic Starter Demo](http://img.youtube.com/vi/g8fA6ZQKwCo/0.jpg)](https://www.youtube.com/watch?v=g8fA6ZQKwCo)
