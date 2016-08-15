@@ -11,4 +11,8 @@ def load_questions_from_url
   RestClient.get(ENV['questions_source_url']).body
 end
 
-QUESTIONS = load_questions.split("\n").map(&:strip).reject(&:empty?).freeze
+QUESTIONS = load_questions.
+  split("\n").
+  map { |q| q.strip.gsub(/^\d+\.\s+/, '') }.
+  reject(&:empty?).
+  freeze

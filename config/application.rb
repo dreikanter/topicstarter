@@ -10,6 +10,8 @@ module Topicstarter
 
     config.active_job.queue_adapter = :delayed_job
 
+    config.action_cable.mount_path = '/cable'
+
     config.generators do |g|
       g.test_framework :minitest, spec: false, fixture: false
       g.helper       false

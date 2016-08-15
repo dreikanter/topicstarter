@@ -7,9 +7,31 @@
     <i class="fa fa-copy"></i> Copy
   </button>
 
-  <%= link_to 'Moar!', new_topic_path(format: :js), remote: true, class: 'btn btn-default', data: { behavior: 'moar-button' } %>
+  <%= link_to 'Moar!', new_topic_path(secret: @secret, format: :js), remote: true, class: 'btn btn-success', data: { behavior: 'moar-button' } %>
 </p>
 
 <script type="text/javascript">
   new Clipboard("[data-behavior=copy-button]");
 </script>
+
+<% if @secret %>
+  <script type="text/javascript">
+    "use strict";
+
+    App.topics = App.cable.subscriptions.create({
+      channel: "TopicsChannel",
+      secret: "<%= @secret %>"
+    }, {
+      connected: function() {
+        console.log("Subscription is ready for use on the server");
+      },
+      disconnected: function() {
+        console.log("Subscription has been terminated by the server");
+      },
+      received: function(event) {
+        console.log("Got a new question: " + event.question);
+        App.updateQuestion(event.question);
+      }
+    });
+  </script>
+<% end %>

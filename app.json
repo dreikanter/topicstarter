@@ -1,0 +1,23 @@
+{
+	"name": "Topic Starter",
+	"description": "Freefeed Conversation Club Topic Starter.",
+	"repository": "https://github.com/dreikanter/topicstarter",
+	"website": "https://github.com/dreikanter/topicstarter",
+	"keywords": [
+		"conversations",
+		"topics",
+		"questions",
+		"actioncable",
+		"demo"
+	],
+	"env": {
+    "questions_source_url": {
+      "description": "The number of processes to run.",
+      "value": "https://gist.githubusercontent.com/dreikanter/9307f430e41be07e8399b83c62305d39/raw/acd8b3dc02698f09e911b4b40c6b0a3ac7d2dbdc/questions.txt"
+    }
+  },
+  "addons": [
+    "heroku-redis:hobby-dev",
+    "papertrail:choklad"
+  ]
+}

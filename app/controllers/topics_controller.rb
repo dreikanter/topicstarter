@@ -1,6 +1,8 @@
 class TopicsController < ApplicationController
   def new
     @question = QUESTIONS.sample
-    puts session[:secret]
+    @secret = params[:secret]
+    return unless @secret.present?
+    ActionCable.server.broadcast("topics:#{@secret}", question: @question)
   end
 end

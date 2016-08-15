@@ -17,3 +17,16 @@
 //= require jquery-ui/effect-highlight
 //= require clipboard
 //= require_tree .
+
+(function() {
+  this.App || (this.App = {});
+
+  App.updateQuestion = function(question) {
+    var moarButton = $("[data-behavior=moar-button]");
+    var questionContainer = $("[data-behavior=question-container]");
+    moarButton.addClass("disabled");
+    questionContainer.html(question).effect("highlight", {}, 500, function() {
+      moarButton.removeClass("disabled");
+    });
+  };
+}).call(this);

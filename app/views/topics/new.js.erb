@@ -1,4 +1,1 @@
-$("[data-behavior=moar-button]").addClass("disabled");
-$("[data-behavior=question-container]").html("<%= raw @question %>").effect("highlight", {}, 750, function() {
-  $("[data-behavior=moar-button]").removeClass("disabled");
-});
+App.updateQuestion("<%= raw @question %>");
