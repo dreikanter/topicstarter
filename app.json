@@ -17,7 +17,6 @@
     }
   },
   "addons": [
-    "heroku-redis:hobby-dev",
-    "papertrail:choklad"
+    "heroku-redis:hobby-dev"
   ]
 }
