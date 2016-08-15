@@ -1,25 +1,14 @@
-/*
- * This is a manifest file that'll be compiled into application.css, which will include all the files
- * listed below.
- *
- * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
- * or any plugin's vendor/assets/stylesheets directory can be referenced here using a relative path.
- *
- * You're free to add application-wide styles to this file and they'll appear at the bottom of the
- * compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
- * files in this directory. Styles in this file should be added after the last require_* statement.
- * It is generally better to create a new file per style scope.
- *
- *= require jquery-ui/core
- *= require font-awesome
- */
+//= require jquery-ui/core
+//= require font-awesome
 
-@import "bootstrap-sprockets";
-@import "bootstrap";
+@import 'bootstrap-sprockets';
+@import 'bootstrap';
 
 $span-medium: 20px;
 
-html, body, .container {
+html,
+body,
+.container {
   height: 95%;
 }
 
@@ -28,15 +17,17 @@ body {
 }
 
 .container {
-  display: flex;
   align-items: center;
-  justify-content: center;
+  display: flex;
   flex-direction: column;
+  justify-content: center;
   max-width: 40em;
 }
 
+$color-muted-text: #ddd;
+
 .copy-button {
-  color: #ddd;
+  color: $color-muted-text;
 }
 
 .large {
