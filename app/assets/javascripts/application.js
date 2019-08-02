@@ -22,7 +22,6 @@
         console.log("DISCONNECTED");
       },
       received: function(event) {
-        console.log("Got a new question: " + event.question);
         App.updateQuestion(event.question);
       }
     });

@@ -10,5 +10,4 @@ class SessionsControllerTest < ActionDispatch::IntegrationTest
     get sessions_show_url
     assert_response :success
   end
-
 end

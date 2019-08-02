@@ -13,13 +13,11 @@
 	"success_url": "/",
 	"env": {
     "questions_source_url": {
-      "description": "The number of processes to run.",
+      "description": "Sample questions.",
       "value": "https://gist.githubusercontent.com/dreikanter/9307f430e41be07e8399b83c62305d39/raw/acd8b3dc02698f09e911b4b40c6b0a3ac7d2dbdc/questions.txt"
     }
   },
-	"scripts": {
-    "postdeploy": "bundle exec rake db:migrate"
-  },
+	"scripts": {},
   "addons": [
     "heroku-redis:hobby-dev"
   ]

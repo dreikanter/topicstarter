@@ -5,5 +5,4 @@ class TopicsControllerTest < ActionDispatch::IntegrationTest
     get topics_show_url
     assert_response :success
   end
-
 end
