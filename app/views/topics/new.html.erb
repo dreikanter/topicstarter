@@ -14,27 +14,19 @@
 </div>
 
 <script type="text/javascript">
-  new Clipboard("[data-behavior=copy-button]");
+  "use strict";
+
+  $(function () {
+    new Clipboard("[data-behavior=copy-button]");
+  });
 </script>
 
 <% if @secret %>
   <script type="text/javascript">
     "use strict";
 
-    App.topics = App.cable.subscriptions.create({
-      channel: "TopicsChannel",
-      secret: "<%= @secret %>"
-    }, {
-      connected: function() {
-        console.log("Subscription is ready for use on the server");
-      },
-      disconnected: function() {
-        console.log("Subscription has been terminated by the server");
-      },
-      received: function(event) {
-        console.log("Got a new question: " + event.question);
-        App.updateQuestion(event.question);
-      }
+    $(function () {
+      App.subscribeToTopics("<%= @secret %>");
     });
   </script>
 <% end %>

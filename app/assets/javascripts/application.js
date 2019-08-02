@@ -1,36 +1,43 @@
-// This is a manifest file that'll be compiled into application.js, which will include all the files
-// listed below.
-//
-// Any JavaScript/Coffee file within this directory, lib/assets/javascripts, vendor/assets/javascripts,
-// or any plugin's vendor/assets/javascripts directory can be referenced here using a relative path.
-//
-// It's not advisable to add code directly here, but if you do, it'll appear at the bottom of the
-// compiled file. JavaScript code in this file should be added after the last require_* statement.
-//
-// Read Sprockets README (https://github.com/rails/sprockets#sprockets-directives) for details
-// about supported directives.
-//
+//= require clipboard
 //= require jquery
 //= require jquery_ujs
-//= require bootstrap.min
-//= require clipboard
-//= require_tree .
+//= require action_cable
 
 "use strict";
 
 (function() {
-  window.App = {
-    updateQuestion: function(question) {
-      console.log(question);
-      var element = $('[data-behavior=question]');
-      var button = $('[data-behavior=moar-button]');
+  window.App || (window.App = {});
 
-      button.addClass('disabled');
-      element.html(question).addClass('question--highlighted');
-      setTimeout(function () {
-        element.removeClass('question--highlighted');
-        button.removeClass('disabled');
-      }, 2000);
-    }
-  };
+  App.cable = ActionCable.createConsumer("/cable");
+
+  App.subscribeToTopics = function (secret) {
+    window.App.cable.subscriptions.create({
+      channel: "TopicsChannel",
+      secret: secret
+    }, {
+      connected: function() {
+        console.log("CONNECTED");
+      },
+      disconnected: function() {
+        console.log("DISCONNECTED");
+      },
+      received: function(event) {
+        console.log("Got a new question: " + event.question);
+        App.updateQuestion(event.question);
+      }
+    });
+  }
+
+  App.updateQuestion = function(question) {
+    console.log(question);
+    var element = $('[data-behavior=question]');
+    var button = $('[data-behavior=moar-button]');
+
+    button.addClass('disabled');
+    element.html(question).addClass('question--highlighted');
+    setTimeout(function () {
+      element.removeClass('question--highlighted');
+      button.removeClass('disabled');
+    }, 500);
+  }
 })();
