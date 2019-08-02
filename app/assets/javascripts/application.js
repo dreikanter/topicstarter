@@ -13,21 +13,24 @@
 //= require jquery
 //= require jquery_ujs
 //= require bootstrap.min
-//= require jquery-ui/core
-//= require jquery-ui/effect-highlight
 //= require clipboard
 //= require_tree .
 
-(function() {
-  this.App || (this.App = {});
+"use strict";
 
-  App.updateQuestion = function(question) {
-    var moarButton = $("[data-behavior=moar-button]");
-    var questionContainer = $("[data-behavior=question-container]");
-    if (questionContainer.html() == question) return;
-    moarButton.addClass("disabled");
-    questionContainer.html(question).effect("highlight", {}, 500, function() {
-      moarButton.removeClass("disabled");
-    });
+(function() {
+  window.App = {
+    updateQuestion: function(question) {
+      console.log(question);
+      var element = $('[data-behavior=question]');
+      var button = $('[data-behavior=moar-button]');
+
+      button.addClass('disabled');
+      element.html(question).addClass('question--highlighted');
+      setTimeout(function () {
+        element.removeClass('question--highlighted');
+        button.removeClass('disabled');
+      }, 2000);
+    }
   };
-}).call(this);
+})();
