@@ -1,5 +1,5 @@
 class SessionsController < ApplicationController
   def new
-    @secret = SecureRandom.uuid.gsub('-', '')
+    @secret = SecureRandom.alphanumeric
   end
 end

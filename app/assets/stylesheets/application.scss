@@ -1,19 +1,26 @@
-//= require font-awesome
 //= require animate-css/animate
 
-@import "bootstrap-sprockets";
-@import "bootstrap";
+@import 'bootstrap';
 
-$span-medium: 20px;
+$span-medium: 1em;
 
 html,
 body,
 .container {
   height: 95%;
+  padding: 0;
 }
 
 body {
   padding: $span-medium;
+}
+
+h1 {
+  font-size: $font-size-h2;
+  font-weight: normal;
+  line-height: 1.4;
+  margin-bottom: $span-medium;
+  text-align: center;
 }
 
 .container {
@@ -22,24 +29,6 @@ body {
   flex-direction: column;
   justify-content: center;
   max-width: 40em;
-}
-
-$color-muted-text: #ddd;
-
-.copy-button {
-  color: $color-muted-text;
-}
-
-.large {
-  font-size: 28px;
-  margin-bottom: $span-medium;
-}
-
-.menu {
-  .menu-item {
-    display: inline-block;
-    padding-right: $span-medium;
-  }
 }
 
 .question {
@@ -52,4 +41,22 @@ $color-muted-text: #ddd;
 .question--highlighted {
   background-color: #ffff99;
   transition-duration: 0s;
+}
+
+.session-form {
+  margin-bottom: $span-medium * 2;
+}
+
+.btn,
+.nav {
+  svg {
+    fill: currentColor;
+    height: 1em;
+    vertical-align: -0.125em;
+    width: 1em;
+  }
+}
+
+.moar-button {
+  min-width: 8em;
 }

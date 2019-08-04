@@ -1,20 +1,24 @@
-<p class="text-center large">
-  Share this link with other participants:<br>
-</p>
+<h1>Share this link with other participants</h1>
 
-<div class="input-group large">
-  <input type="text" class="form-control" placeholder="Search for..." data-behavior="session-url-container">
-  <span class="input-group-btn">
-    <button class="btn btn-default" type="button" data-behavior="copy-button" data-clipboard-target="[data-behavior=session-url-container]">Copy!</button>
-  </span>
+<div class="form-group form-group-lg session-form">
+  <div class="input-group">
+    <input type="text" class="form-control" data-behavior="session-url-container">
+    <span class="input-group-btn">
+      <button class="btn btn-lg btn-default" type="button" data-behavior="copy-button" data-clipboard-target="[data-behavior=session-url-container]">Copy!</button>
+    </span>
+  </div>
 </div>
 
 <p class="text-center">
-  <%= link_to 'Start session', new_topic_path(secret: @secret), class: 'btn btn-success' %>
+  <%= link_to 'Start session', new_topic_path(secret: @secret), class: 'btn btn-lg btn-success' %>
 </p>
 
 <script type="text/javascript">
-  var input = $("[data-behavior=session-url-container]")[0];
-  input.value = window.location.origin + "<%= new_topic_path(secret: @secret) %>";
-  new Clipboard("[data-behavior=copy-button]");
+  "use strict";
+
+  $(function () {
+    var input = $("[data-behavior=session-url-container]")[0];
+    input.value = window.location.origin + "<%= new_topic_path(secret: @secret) %>";
+    new Clipboard("[data-behavior=copy-button]");
+  });
 </script>

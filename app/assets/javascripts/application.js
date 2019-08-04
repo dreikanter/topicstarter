@@ -1,25 +1,25 @@
+//= require action_cable
 //= require clipboard
 //= require jquery
 //= require jquery_ujs
-//= require action_cable
 
-"use strict";
+'use strict';
 
 (function() {
   window.App || (window.App = {});
 
-  App.cable = ActionCable.createConsumer("/cable");
+  App.cable = ActionCable.createConsumer('/cable');
 
   App.subscribeToTopics = function (secret) {
     window.App.cable.subscriptions.create({
-      channel: "TopicsChannel",
+      channel: 'TopicsChannel',
       secret: secret
     }, {
       connected: function() {
-        console.log("CONNECTED");
+        console.log('CONNECTED');
       },
       disconnected: function() {
-        console.log("DISCONNECTED");
+        console.log('DISCONNECTED');
       },
       received: function(event) {
         App.updateQuestion(event.question);

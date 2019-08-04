@@ -1,10 +1,11 @@
 source 'https://rubygems.org'
 
-gem 'bootstrap-sass', '~> 3.3', '>= 3.3.6'
+gem 'activerecord-nulldb-adapter', '~> 0.4.0'
+gem 'bootstrap-sass', '~> 3.4', '>= 3.4.1'
 gem 'figaro', '~> 1.1', '>= 1.1.1'
-gem 'font-awesome-rails', '~> 4.6', '>= 4.6.3.1'
+gem 'font-awesome-rails', '~> 4.7', '>= 4.7.0.5'
 gem 'jquery-rails', '~> 4.3', '>= 4.3.5'
-gem 'puma', '~> 3.5'
+gem 'puma', '~> 4.0', '>= 4.0.1'
 gem 'rails', '~> 5.2', '>= 5.2.3'
 gem 'redis', '~> 4.1', '>= 4.1.2'
 gem 'rest-client', '~> 2.0', '>= 2.0.2'
@@ -21,6 +22,9 @@ group :development, :test do
   gem 'pry-rails', '~> 0.3.9'
   gem 'spring', '~> 2.1'
   gem 'spring-watcher-listen', '~> 2.0', '>= 2.0.1'
+end
+
+group :development do
   gem 'web-console'
 end
 
