@@ -12,7 +12,7 @@ bundle exec rails server
 Configuration:
 
 - In development environment questions will be loaded from `db/questions.txt` under project root.
-- In production exnvironment questions will be loaded from `ENV['questions_source_url']`.
+- In production exnvironment questions will be loaded from `ENV['QUESTIONS_SOURCE_URL']`.
 - In both cases each non-empty line from the text file will be treated as a separate question.
 
 How to use:

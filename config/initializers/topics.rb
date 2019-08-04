@@ -8,7 +8,7 @@ def load_questions_from_file
 end
 
 def load_questions_from_url
-  RestClient.get(ENV['questions_source_url']).body
+  RestClient.get(ENV['QUESTIONS_SOURCE_URL']).body
 end
 
 QUESTIONS = load_questions.

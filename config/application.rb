@@ -7,6 +7,8 @@ require "active_storage/engine"
 require "action_controller/railtie"
 require "action_view/railtie"
 require "action_cable/engine"
+require "action_cable/engine"
+require "active_job/railtie"
 require "rails/test_unit/railtie"
 require "sprockets/railtie"
 

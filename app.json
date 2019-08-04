@@ -12,9 +12,16 @@
 	],
 	"success_url": "/",
 	"env": {
-    "questions_source_url": {
+    "QUESTIONS_SOURCE_URL": {
       "description": "Sample questions.",
       "value": "https://gist.githubusercontent.com/dreikanter/9307f430e41be07e8399b83c62305d39/raw/acd8b3dc02698f09e911b4b40c6b0a3ac7d2dbdc/questions.txt"
+    },
+    "SECRET_TOKEN": {
+      "description": "A secret key for verifying the integrity of signed cookies.",
+      "generator": "secret"
+    },
+    "SECRET_KEY_BASE": {
+      "generator": "secret"
     }
   },
 	"scripts": {},

@@ -1,7 +1,6 @@
 source 'https://rubygems.org'
 
 gem 'bootstrap-sass', '~> 3.4', '>= 3.4.1'
-gem 'figaro', '~> 1.1', '>= 1.1.1'
 gem 'font-awesome-rails', '~> 4.7', '>= 4.7.0.5'
 gem 'jquery-rails', '~> 4.3', '>= 4.3.5'
 gem 'puma', '~> 4.0', '>= 4.0.1'
