@@ -1,6 +1,5 @@
 source 'https://rubygems.org'
 
-gem 'activerecord-nulldb-adapter', '~> 0.4.0'
 gem 'bootstrap-sass', '~> 3.4', '>= 3.4.1'
 gem 'figaro', '~> 1.1', '>= 1.1.1'
 gem 'font-awesome-rails', '~> 4.7', '>= 4.7.0.5'
@@ -15,6 +14,7 @@ gem 'turbolinks', '~> 5.2'
 gem 'uglifier', '~> 4.1', '>= 4.1.20'
 
 group :development, :test do
+  gem 'activerecord-nulldb-adapter', '~> 0.4.0'
   gem 'guard-minitest', require: false
   gem 'listen'
   gem 'minitest-rails', '~> 5.2'
