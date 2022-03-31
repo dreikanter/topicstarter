@@ -5,6 +5,8 @@ RUN apt-get update --yes \
     apt-utils \
     build-essential \
     racc \
+    nodejs \
+    npm \
   && gem install bundler:'~> 2.3' \
   && rm -rf /var/lib/apt/lists/*
 

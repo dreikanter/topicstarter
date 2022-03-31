@@ -39,8 +39,6 @@ GEM
       activemodel (= 5.2.7)
       activesupport (= 5.2.7)
       arel (>= 9.0)
-    activerecord-nulldb-adapter (0.4.0)
-      activerecord (>= 2.0.0)
     activestorage (5.2.7)
       actionpack (= 5.2.7)
       activerecord (= 5.2.7)
@@ -50,12 +48,10 @@ GEM
       i18n (>= 0.7, < 2)
       minitest (~> 5.1)
       tzinfo (~> 1.1)
-    ansi (1.5.0)
     arel (9.0.0)
     ast (2.4.2)
     autoprefixer-rails (10.4.2.0)
       execjs (~> 2)
-    bindex (0.8.1)
     bootstrap-sass (3.4.1)
       autoprefixer-rails (>= 5.2.1)
       sassc (>= 2.0.0)
@@ -65,6 +61,7 @@ GEM
     bundler-audit (0.9.0.1)
       bundler (>= 1.2.0, < 3)
       thor (~> 1.0)
+    byebug (11.1.3)
     coderay (1.1.3)
     concurrent-ruby (1.1.10)
     crass (1.0.6)
@@ -77,10 +74,6 @@ GEM
       railties (>= 3.2, < 8.0)
     globalid (1.0.0)
       activesupport (>= 5.0)
-    guard-compat (1.2.1)
-    guard-minitest (2.4.6)
-      guard-compat (~> 1.2)
-      minitest (>= 3.0)
     http-accept (1.7.0)
     http-cookie (1.0.4)
       domain_name (~> 0.5)
@@ -108,11 +101,6 @@ GEM
     minitest-rails (5.2.0)
       minitest (~> 5.10)
       railties (~> 5.2.0)
-    minitest-reporters (1.5.0)
-      ansi
-      builder
-      minitest (>= 5.0)
-      ruby-progressbar
     netrc (0.11.0)
     nio4r (2.5.8)
     nokogiri (1.13.3-aarch64-linux)
@@ -122,11 +110,12 @@ GEM
     parallel (1.22.1)
     parser (3.1.1.0)
       ast (~> 2.4.1)
-    pry (0.14.1)
+    pry (0.13.1)
       coderay (~> 1.1)
       method_source (~> 1.0)
-    pry-rails (0.3.9)
-      pry (>= 0.10.4)
+    pry-byebug (3.9.0)
+      byebug (~> 11.0)
+      pry (~> 0.13.0)
     puma (5.6.4)
       nio4r (~> 2.0)
     racc (1.6.0)
@@ -199,9 +188,6 @@ GEM
     sassc (2.4.0)
       ffi (~> 1.9)
     spring (2.1.1)
-    spring-watcher-listen (2.0.1)
-      listen (>= 2.7, < 4.0)
-      spring (>= 1.2, < 3.0)
     sprockets (3.7.2)
       concurrent-ruby (~> 1.0)
       rack (> 1, < 3)
@@ -228,11 +214,6 @@ GEM
       unf_ext
     unf_ext (0.0.8.1)
     unicode-display_width (2.1.0)
-    web-console (3.7.0)
-      actionview (>= 5.0)
-      activemodel (>= 5.0)
-      bindex (>= 0.4.0)
-      railties (>= 5.0)
     websocket-driver (0.7.5)
       websocket-extensions (>= 0.1.0)
     websocket-extensions (0.1.5)
@@ -242,16 +223,13 @@ PLATFORMS
   x86_64-linux
 
 DEPENDENCIES
-  activerecord-nulldb-adapter (~> 0.4.0)
   bootstrap-sass (~> 3.4, >= 3.4.1)
   bundle-audit
   font-awesome-rails (~> 4.7, >= 4.7.0.5)
-  guard-minitest
   jquery-rails (~> 4.3, >= 4.3.5)
   listen
   minitest-rails (~> 5.2)
-  minitest-reporters (~> 1.3, >= 1.3.6)
-  pry-rails (~> 0.3.9)
+  pry-byebug
   puma (~> 5.0)
   rails (~> 5.2, >= 5.2.3)
   rails-assets-animate-css (~> 3.5.2)!
@@ -260,11 +238,9 @@ DEPENDENCIES
   rest-client (~> 2.0, >= 2.0.2)
   sass-rails (~> 5.0, >= 5.0.7)
   spring (~> 2.1)
-  spring-watcher-listen (~> 2.0, >= 2.0.1)
   standardrb
   turbolinks (~> 5.2)
   uglifier (~> 4.1, >= 4.1.20)
-  web-console
 
 RUBY VERSION
    ruby 2.7.5p203

@@ -14,20 +14,15 @@ gem "turbolinks", "~> 5.2"
 gem "uglifier", "~> 4.1", ">= 4.1.20"
 
 group :development, :test do
-  gem "activerecord-nulldb-adapter", "~> 0.4.0"
-  gem "guard-minitest", require: false
   gem "listen"
   gem "minitest-rails", "~> 5.2"
-  gem "minitest-reporters", "~> 1.3", ">= 1.3.6"
-  gem "pry-rails", "~> 0.3.9"
+  gem "pry-byebug"
   gem "spring", "~> 2.1"
-  gem "spring-watcher-listen", "~> 2.0", ">= 2.0.1"
 end
 
 group :development do
   gem "standardrb"
   gem "bundle-audit"
-  gem "web-console"
 end
 
 source "https://rails-assets.org" do

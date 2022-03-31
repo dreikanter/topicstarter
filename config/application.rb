@@ -3,7 +3,6 @@ require_relative "boot"
 # SEE: https://github.com/rails/rails/blob/5-2-stable/railties/lib/rails/all.rb
 
 require "rails"
-require "active_storage/engine"
 require "action_controller/railtie"
 require "action_view/railtie"
 require "action_cable/engine"
