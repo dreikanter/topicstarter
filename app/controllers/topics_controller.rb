@@ -11,20 +11,20 @@ class TopicsController < ApplicationController
   def questions
     @questions ||= load_questions
       .split("\n")
-      .map { |question| question.strip.gsub(/^\d+\.\s+/, '') }
+      .map { |question| question.strip.gsub(/^\d+\.\s+/, "") }
       .reject(&:empty?)
       .freeze
   end
 
   def load_questions
     unless Rails.env.production?
-      return File.read(Rails.root.join('db/questions.txt'))
+      return File.read(Rails.root.join("db/questions.txt"))
     end
 
     RestClient.get(source_url).body
   end
 
   def source_url
-    ENV.fetch('QUESTIONS_SOURCE_URL')
+    ENV.fetch("QUESTIONS_SOURCE_URL")
   end
 end
